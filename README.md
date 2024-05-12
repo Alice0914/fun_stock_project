@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # WallStreetBets Big Board: Top 50 Stocks Application
 
 ## Project Description
@@ -46,3 +47,6 @@ docker run -p 8501:8501 my_streamlit_app:v1.0
 ```
 
 Then, open your web browser and go to **http://localhost:8501** to view the app.
+=======
+# fun_stock_project
+>>>>>>> ab69ac0bbdd10390d8a9831fe30f74aa55320185
