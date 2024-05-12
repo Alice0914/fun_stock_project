@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # WallStreetBets Big Board: Top 50 Stocks Application
 
 ## Project Description
@@ -10,7 +9,7 @@
 - **Predictive Analysis**: Forecasts stock prices for up to 10 days ahead.
 - **Sentiment Analysis**: Analyzes sentiments based on comments from Reddit's WallStreetBets.
 
-[Watch the Video](https://youtu.be/Ux_QUVPsueA)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Ux_QUVPsueA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Data Sources
 Data is retrieved from:
@@ -47,6 +46,3 @@ docker run -p 8501:8501 my_streamlit_app:v1.0
 ```
 
 Then, open your web browser and go to **http://localhost:8501** to view the app.
-=======
-# fun_stock_project
->>>>>>> ab69ac0bbdd10390d8a9831fe30f74aa55320185
