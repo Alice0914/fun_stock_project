@@ -1,0 +1,31 @@
+/* style.css */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.divider {
+    border-left: 2px solid gray;
+    height: 100px;
+    margin: 4px 20px 4px 20px;
+}
+
+.large-font {
+    font-size: 1.3rem; 
+}
+
+table.dataframe {
+    width: 100% !important;
+    max-width: none !important;
+    margin: auto;
+}
