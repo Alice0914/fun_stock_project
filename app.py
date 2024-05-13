@@ -62,6 +62,7 @@ def perform_data_analysis(ticker, OHLC, predicted_days, date_input):
         display_stock_analysis(df, ticker, OHLC)
         display_stock_predictions(df, ticker, OHLC, predicted_days)
         display_changePoint_analysis(df, ticker, OHLC, predicted_days)
+        display_model_error_metrics(df, ticker, OHLC)
         display_sentiment_analysis(sentiment_df, ticker, formatted_date)
     else:
         st.error("Failed to fetch time series data or no data available for this ticker.")
@@ -97,6 +98,11 @@ def display_changePoint_analysis(df, ticker, OHLC, predicted_days):
     st.subheader(f"{ticker} {OHLC} Price Change Point Date") 
     changepoints_analysis = changePoint_date(model)
     st.dataframe(changepoints_analysis, width=1200)
+
+def display_model_error_metrics(df, ticker, OHLC):
+    metrics_result = model_error_metrics(df, OHLC)
+    st.subheader(f"{ticker} {OHLC} Model Error Metrics")
+    st.dataframe(metrics_result, width=1200)
 
 def display_sentiment_analysis(sentiment_df, ticker, date):
     # Display sentiment analysis data.

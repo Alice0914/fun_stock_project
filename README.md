@@ -9,7 +9,7 @@
 - **Predictive Analysis**: Forecasts stock prices for up to 10 days ahead.
 - **Sentiment Analysis**: Analyzes sentiments based on comments from Reddit's WallStreetBets.
 
-![WallStreetBets Big Board: Top 50 Stocks App](image/stockapp.gif)
+![WallStreetBets Big Board: Top 50 Stocks App](image/streamlit_app.gif)
 
 ### Data Sources
 Data is retrieved from:

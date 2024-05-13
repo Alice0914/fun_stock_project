@@ -131,14 +131,20 @@ def changePoint_date(model):
 ##################  Calculate Error Metrics  ################## 
 # forecasting accuracy is generally measured by error metrics
 # Split into train and test
-def model_error_metrics(df, OHLC, predicted_days):
+def model_error_metrics(df, OHLC):
     df = df[['Date', OHLC]].rename(columns={'Date': 'ds', OHLC: 'y'})
-    train = df.iloc[:80]
-    test = df.iloc[80:]
+    num_rows = len(df)
+    train_idx = int(num_rows * 0.8)
+    train = df.iloc[:train_idx]
+    test = df.iloc[train_idx:]
 
-    model, forecast = forecast_stock_price(df, OHLC, predicted_days)
+    model = Prophet()
+    model.fit(train)
 
-    y_pred = forecast['yhat'].tail(predicted_days).values
+    future = model.make_future_dataframe(periods=20, freq='B')
+    forecast = model.predict(future)
+
+    y_pred = forecast['yhat'].tail(len(test)).values
     y_true = test['y'].values
 
     mae = mean_absolute_error(y_true, y_pred)
@@ -148,7 +154,8 @@ def model_error_metrics(df, OHLC, predicted_days):
     
     metrics_df = pd.DataFrame({
         'Metric': ['MAE', 'MSE', 'RMSE', 'MAPE'],
-        'Value': [mae, mse, rmse, mape]
+        'Value': [round(mae,1), round(mse, 1), round(rmse, 1), round(mape, 1)]
     })
-
     return metrics_df
+
+
